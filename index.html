@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Bruno’s Rescue is a retro-inspired 2D platforming adventure by AppApex." />
+  <title>Bruno’s Rescue | Retro Platformer Adventure</title>
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-elev: #121a30;
+      --text: #f2f6ff;
+      --muted: #b9c3dd;
+      --primary: #6ee7ff;
+      --primary-strong: #38bdf8;
+      --accent: #a78bfa;
+      --border: #263253;
+      --shadow: rgba(10, 18, 40, 0.35);
+      --maxw: 1100px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", "Segoe UI", Tahoma, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 15%, #1a2447 0, transparent 30%),
+        radial-gradient(circle at 80% 10%, #252052 0, transparent 25%),
+        linear-gradient(180deg, #070b16 0%, var(--bg) 100%);
+      line-height: 1.6;
+    }
+
+    .container { width: min(92%, var(--maxw)); margin: 0 auto; }
+
+    header.hero {
+      text-align: center;
+      padding: 4.5rem 0 3rem;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.03);
+      font-size: 0.9rem;
+    }
+
+
+
+    .hero-icon {
+      display: block;
+      width: clamp(72px, 14vw, 112px);
+      height: auto;
+      margin: 0.25rem auto 1rem;
+      image-rendering: pixelated;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 4rem);
+      letter-spacing: 1px;
+      text-shadow: 0 0 18px rgba(110, 231, 255, 0.25);
+    }
+
+    .subtitle {
+      margin: 0.8rem 0 0;
+      color: var(--primary);
+      font-size: clamp(1.05rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+    }
+
+    .small-note {
+      margin-top: 0.6rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 1.75rem;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #041022;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      font-weight: 700;
+      border: none;
+      border-radius: 0.65rem;
+      padding: 0.75rem 1.1rem;
+      box-shadow: 0 8px 18px var(--shadow);
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .btn:hover, .btn:focus-visible {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    .btn.secondary {
+      color: var(--text);
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+    }
+
+    section {
+      margin: 1.5rem 0;
+      padding: 1.35rem;
+      background: rgba(18, 26, 48, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 0.95rem;
+      backdrop-filter: blur(2px);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: clamp(1.35rem, 4vw, 1.9rem);
+      color: #e8edff;
+    }
+
+    p { margin: 0.5rem 0 0; color: var(--muted); }
+
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin-top: 0.9rem;
+      border-radius: 0.8rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.8rem;
+      margin-top: 0.9rem;
+    }
+
+    .gallery figure { margin: 0; }
+
+    .gallery img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      border-radius: 0.6rem;
+      border: 1px solid var(--border);
+      background: #0b0f1f;
+    }
+
+    footer {
+      padding: 2rem 0 2.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem 1.1rem;
+      margin-top: 0.65rem;
+    }
+
+    .footer-links a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="hero container">
+    <span class="badge">Retro Pixel Adventure</span>
+    <img class="hero-icon" src="assets/icon.png" alt="Bruno’s Rescue game icon">
+    <h1>Bruno’s Rescue</h1>
+    <p class="subtitle">Retro-inspired 2D platforming adventure</p>
+    <p class="small-note">Developed by Srijon Bhattacharya, a nine year old indie developer</p>
+    <nav class="cta-row" aria-label="Main links">
+      <a class="btn" href="https://appapex.itch.io/brunos-rescue" target="_blank" rel="noopener noreferrer">Play Demo on itch.io</a>
+      <a class="btn secondary" href="https://apps.microsoft.com/detail/9P79ZVMKX7K3?referrer=appbadge&amp;mode=full" target="_blank" rel="noopener noreferrer">Download from Microsoft Store</a>
+      <a class="btn secondary" href="https://apps.apple.com/app/brunos-rescue/id6763331343" target="_blank" rel="noopener noreferrer">Download from Mac App Store</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section aria-labelledby="trailer-heading">
+      <h2 id="trailer-heading">Game Trailer</h2>
+      <p>Watch a quick look at the world, movement, and action of Bruno’s Rescue.</p>
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/-b-rqyWQrao?si=a_X1FznM1DUhlvVW"
+          title="Bruno’s Rescue Trailer"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section aria-labelledby="screens-heading">
+      <h2 id="screens-heading">Gameplay Screenshots</h2>
+      <p>In-game scenes from Bruno’s Rescue.</p>
+      <div class="gallery">
+        <figure><img src="screenshots/gameplay-1.png" alt="Bruno jumping across platforms in a cave level" loading="lazy"></figure>
+        <figure><img src="screenshots/gameplay-2.png" alt="Bruno avoiding traps in a retro platforming stage" loading="lazy"></figure>
+        <figure><img src="screenshots/gameplay-3.png" alt="Action sequence with enemies in Bruno’s Rescue" loading="lazy"></figure>
+        <figure><img src="screenshots/gameplay-4.png" alt="Boss encounter moment in Bruno’s Rescue" loading="lazy"></figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="about-heading">
+      <h2 id="about-heading">About Bruno’s Rescue</h2>
+      <p>Bruno’s Rescue is a retro-inspired platforming adventure across dangerous worlds filled with traps, enemies, and boss fights.</p>
+      <p>Explore vibrant environments, survive challenging encounters, and battle powerful enemies in this indie platformer experience.</p>
+    </section>
+
+    <section aria-labelledby="demo-heading">
+      <h2 id="demo-heading">Demo Version</h2>
+      <p>This browser version is a playable demo featuring platforming gameplay and a boss encounter from Bruno’s Rescue. The full experience is available on Microsoft Store and Mac App Store.</p>
+    </section>
+
+    <section aria-labelledby="appapex-heading">
+      <h2 id="appapex-heading">About AppApex</h2>
+      <p>AppApex is an independent game and app initiative focused on creating simple and engaging digital experiences.</p>
+      <p>Official AppApex Website: <a href="https://appapex.wordpress.com/" target="_blank" rel="noopener noreferrer">appapex.wordpress.com</a></p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div><strong>AppApex</strong></div>
+    <div>© 2026 Bruno’s Rescue. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="https://appapex.itch.io/brunos-rescue" target="_blank" rel="noopener noreferrer">itch.io</a>
+      <a href="https://apps.microsoft.com/detail/9P79ZVMKX7K3?referrer=appbadge&amp;mode=full" target="_blank" rel="noopener noreferrer">Microsoft Store</a>
+      <a href="https://apps.apple.com/app/brunos-rescue/id6763331343" target="_blank" rel="noopener noreferrer">Mac App Store</a>
+      <a href="https://appapex.wordpress.com/" target="_blank" rel="noopener noreferrer">Official AppApex Website</a>
+    </div>
+  </footer>
+</body>
+</html>
