@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Bruno’s Rescue is a retro-inspired 2D platforming adventure by AppApex." />
   <title>Bruno’s Rescue | Retro Platformer Adventure</title>
+  <link rel="icon" type="image/png" href="assets/icon.png" />
   <style>
     :root {
       --bg: #0b1020;
@@ -48,6 +49,16 @@
       color: var(--muted);
       background: rgba(255, 255, 255, 0.03);
       font-size: 0.9rem;
+    }
+
+
+
+    .hero-icon {
+      display: block;
+      width: clamp(72px, 14vw, 112px);
+      height: auto;
+      margin: 0.25rem auto 1rem;
+      image-rendering: pixelated;
     }
 
     h1 {
@@ -182,6 +193,7 @@
 <body>
   <header class="hero container">
     <span class="badge">Retro Pixel Adventure</span>
+    <img class="hero-icon" src="assets/icon.png" alt="Bruno’s Rescue game icon">
     <h1>Bruno’s Rescue</h1>
     <p class="subtitle">Retro-inspired 2D platforming adventure</p>
     <p class="small-note">Developed by Srijon Bhattacharya, a nine year old indie developer</p>
